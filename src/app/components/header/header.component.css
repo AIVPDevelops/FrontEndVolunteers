@@ -1,0 +1,82 @@
+/* Contenedor principal */
+.navbar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 200px 10px 370px;
+    background-color: #f8f9fac5;
+    height: 100px;
+  
+    /* Logo de AIVP */
+    .logo img {
+      width: 50px;
+    }
+  
+    /* Botones de inicio de sesión */
+    .btn-login {
+      display: flex;
+      align-items: center;
+  
+      .btn-empresas {
+        background: #fdf8ea;
+        color: #b68b35; 
+        border: none;
+        padding: 5px 15px 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .divider {
+        height: 40px;
+        width: 2px;
+        background-color: #b68b35;
+        margin: 0 20px;
+      }
+
+      .btn-icono-personas {
+        margin: 6px 8px 2px 2px;
+      }
+  
+      .btn-personas {
+        display: inline-flex;
+        align-items: center;
+        background: #b68b35;
+        color: #fff;
+        border: none;
+        padding: 5px 15px 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+  
+        i {
+          margin-right: 5px;
+        }
+
+      }
+      
+    }
+
+    /* Ícono de hamburguesa */
+    .menu-icono {
+      width: 35px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      
+    }
+
+    /* Contenido ícono de hamburguesa */
+    .menu-icono span {
+      height: 4px;
+      background-color: #b68b35;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+
+  }
+  

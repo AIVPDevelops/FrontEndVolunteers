@@ -1,0 +1,84 @@
+/* Contenedor principal */
+.footer {
+  
+  background-color: #f8f9fa;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  margin-top: 50px;
+  padding: 50px 0px 50px 0px;
+
+  /* Subcontenedor  */
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+  }
+
+  /* Logo AIVP e información */
+  .footer-left {
+    text-align: center;
+    img.logo {
+      width: 30px;
+    }
+    p {
+      padding-top: 22px;
+    }
+
+    padding-right: 80px;
+  }
+
+  /* Columnas */
+  .footer-columns {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  /* Columna */
+  .footer-column {
+    text-align: left;
+    h4 {
+      font-weight: bold;
+      color: #7F838C;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin: 5px 0;
+        a {
+          text-decoration: none;
+          color: #333;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  /* Derechos de marca y logos redes sociales */
+  .footer-bottom {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+
+    .social-icons img {
+      width: 24px;
+      margin: 0 10px;
+      display: inline-flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+  }
+
+  
+}

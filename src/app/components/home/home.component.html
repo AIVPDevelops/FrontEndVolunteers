@@ -1,0 +1,220 @@
+<div class="img-principal">
+
+    <img src="assets/Image=01.png" alt="Imagen principal" class="img1"/>
+
+    <h1>¡Hacer voluntariado es fácil!</h1>
+
+    <p class="p1">Explora, crece y ayuda</p>
+
+    <div class="buscador-container">
+      <div class="buscador-input">
+        <span> <img src="assets/search.svg" alt="Imagen principal" class="icono-lupa"/> </span>
+        <input type="text" placeholder="¿Qué lugar quieres explorar?" />
+      </div>
+      <button class="btn-voluntariado">Buscar Voluntariado</button>
+    </div>
+
+</div>
+  
+<div class="subtitulos">
+  <h2>¿Por qué la AIVP?</h2>
+  <h3>Sobre nosotros</h3>
+</div>
+  
+<div class="info-container">
+
+  <div class="info-text">
+    
+    <p>
+      La <strong>Asociación Internacional de Voluntarios Profesionales (AIVP)</strong> es el proyecto de Young Travelers que coordina voluntariados presenciales y virtuales. En estos programas, los jóvenes tienen la libertad de elegir las actividades que deseen realizar, ajustándolas según su disponibilidad de tiempo, intereses, conocimientos y experiencia.
+      El objetivo principal es ser una plataforma profesional y académica para el desarrollo de los jóvenes, así como promover el alcance de los Objetivos de Desarrollo Sostenible en el mundo.
+    </p>
+
+    <a href="#" class="info-btn">Sobre nosotros</a>
+
+  </div>
+
+  <div class="cartas">
+
+    <div class="carta1">
+      <div class="circulo1"> <img src="assets/person.svg"/> </div>
+      <h3>Primer Pilar</h3>
+      <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
+      <a href="#">Button text</a>
+    </div>
+
+    <div class="carta2">
+      <div class="circulo2"> <img src="assets/People.svg" class="img-circulo3"/> </div>
+      <h3>Segundo Pilar</h3>
+      <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
+      <a href="#">Button text</a>
+    </div>
+
+    <div class="carta3">
+      <div class="circulo3"> <img src="assets/person.svg"/> </div>
+      <h3>Tercer Pilar</h3>
+      <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
+      <a href="#">Button text</a>
+    </div>
+
+  </div>
+  
+</div>
+
+<div class="subtitulos">
+  <h2>Sé un voluntario</h2>
+  <h3>Mira nuestras oportunidades</h3>
+</div>
+
+<div class="cuadros">
+  <div class="cuadro"> <p> Voluntariados ambientales y sociales </p>  <img src="assets/Image=16.png"> </div>
+  <div class="cuadro"> <p> Voluntariados permanentes o profesionales </p> <img src="assets/Image=12.png"> </div>
+  <div class="cuadro"> <p> Voluntariados en hostales </p> <img src="assets/Image=09.png"> </div>
+  <div class="cuadro"> <p> El Forum </p> <img src="assets/Image=13.png"> </div>
+  <div class="cuadro"> <p> Alianzas para la sostenibilidad y el desarrollo económico </p> <img src="assets/Image=15.png"> </div>
+  <div class="cuadro"> <p> Monitoreo y conservación ambiental </p> <img src="assets/Image=10.png"> </div>
+  <div class="cuadro"> <p> Nuestra filosofía </p> <img src="assets/Image=14.png"> </div>
+  <div class="cuadro"> <p> Servicios psicológicos gratuitos y otros </p> <img src="assets/Image=08.png"> </div>
+</div>
+
+<div class="subtitulos">
+  <h2>Conoce algunos</h2>
+  <h3>Testimonios</h3>
+</div>
+
+<div class="testimonios-container">
+
+  <div class="testimonios-box">
+
+    <button class="btn-testi prev" (click)="prevTestimonial()">&#8249;</button>
+
+    <div class="testimonios-box2">
+    <div class="testimonios-contenido">
+      <h3>{{ testimonios[current].title }}</h3>
+      <p>{{ testimonios[current].text }}</p>
+    </div>
+    </div>
+
+    <button class="btn-testi next" (click)="nextTestimonial()">&#8250;</button>
+
+  </div>
+
+  <div class="img-testi">
+    <img 
+      *ngFor="let avatar of avatars; let i = index"
+      [src]="avatar.src"
+      [alt]="avatar.alt"
+      [class.active]="current === i"
+      (click)="goToTestimonial(i)"
+    >
+  </div>
+
+  <p class="alt-img-testi">{{ testimonios[current].author }}</p>
+
+</div>
+
+<div class="subtitulos">
+  <h2>Así hemos</h2>
+  <h3>Ayudado a los demás</h3>
+</div>
+
+<div class="seccion-voluntariado">
+
+  <div class="imagen-vol">
+    <img src="assets/Image=17.png" alt="Voluntariado">
+  </div>
+
+  <div class="info-vol">
+
+    <p class="descripcion-vol">
+      Apoyamos diversas organizaciones que elevan a las comunidades a través del voluntariado.
+    </p>
+
+    <div class="grid-vol">
+
+      <div class="item1-vol">
+        <h2>400+</h2>
+        <p>Proyectos completados</p>
+      </div>
+
+      <div class="item2-vol">
+        <h2>100%</h2>
+        <p>Satisfacción</p>
+      </div>
+
+      <div class="item3-vol">
+        <h2>10k</h2>
+        <p>Voluntarios globales</p>
+      </div>
+
+      <div class="item4-vol">
+        <h2>200+</h2>
+        <p>Convenios aliados</p>
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
+
+<div class="aliados-flotantes">
+
+  <div>
+    <h2>Estos son</h2>
+    <h3>Nuestros Aliados</h3>
+  </div>
+
+  <div class="fila">
+    <img src="assets/TikTokLogoGray.svg" alt="McDonald's">
+    <img src="assets/TikTokLogoGray.svg" alt="Toyota">
+    <img src="assets/TikTokLogoGray.svg" alt="Apple">
+    <img src="assets/TikTokLogoGray.svg" alt="Pepsi">
+    <img src="assets/TikTokLogoGray.svg" alt="BMW">
+    <img src="assets/TikTokLogoGray.svg" alt="NBC">
+    <img src="assets/TikTokLogoGray.svg" alt="Adidas">
+  </div>
+
+  <div class="fila2">
+    <img src="assets/TikTokLogoGray.svg" alt="Pepsi">
+    <img src="assets/TikTokLogoGray.svg" alt="BMW">
+    <img src="assets/TikTokLogoGray.svg" alt="Apple">
+    <img src="assets/TikTokLogoGray.svg" alt="Toyota">
+    <img src="assets/TikTokLogoGray.svg" alt="NBC">
+    <img src="assets/TikTokLogoGray.svg" alt="Pepsi Color">
+    <img src="assets/TikTokLogoGray.svg"alt="Apple">
+  </div>
+
+  <div class="fila">
+    <img src="assets/TikTokLogoGray.svg" alt="McDonald's">
+    <img src="assets/TikTokLogoGray.svg" alt="Toyota">
+    <img src="assets/TikTokLogoGray.svg" alt="Apple">
+    <img src="assets/TikTokLogoGray.svg" alt="Pepsi">
+    <img src="assets/TikTokLogoGray.svg" alt="BMW">
+    <img src="assets/TikTokLogoGray.svg" alt="NBC">
+    <img src="assets/TikTokLogoGray.svg" alt="Adidas">
+  </div>
+
+</div>
+
+<div class="subscripcion">
+
+  <div class="subs-items">
+    
+    <div>
+      <p class="subs-info1 ">
+        Sé parte de nuestro newsletter
+      </p>
+      <p class="subs-info2">Te enviaremos las últimas noticias una vez por semana. Sin spam.</p>
+    </div>
+
+    <div class="subs-input ">
+    <input type="text" placeholder="Ingresa tu correo" />
+    </div>
+
+    <a href="#" class="subs-btn">Subscríbete</a>
+
+  </div>
+
+
+</div>
