@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm ci
@@ -29,7 +29,12 @@ jobs:
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build Angular App
-        run: npm run build -- --configuration=production
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            npm run build -- --configuration=development
+          else
+            npm run build -- --configuration=production
+          fi
 
       - name: Upload build artifacts
         if: ${{ github.event_name != 'pull_request' }}
