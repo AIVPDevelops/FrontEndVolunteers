@@ -1,0 +1,42 @@
+name: CD - Deploy Angular dist on S3
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment to deploy
+        type: choice
+        options:
+          - 'DEV'
+          - 'PROD'
+        required: true
+        default: 'DEV'
+  push:
+    branches:
+      - main
+
+jobs:
+    build-and-test:
+      uses: ./.github/workflows/ci-workflow-frontend.yaml
+      secrets: inherit
+
+    deploy:
+      needs: build-and-test
+      runs-on: ubuntu-latest
+      steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: angular-dist
+          path: dist/${{ vars.APP_NAME }}
+
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ vars.BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          SOURCE_DIR: dist/${{ vars.APP_NAME }}
