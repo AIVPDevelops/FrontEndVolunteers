@@ -15,16 +15,16 @@
     </div>
 
 </div>
-  
+
 <div class="subtitulos">
   <h2>¿Por qué la AIVP?</h2>
   <h3>Sobre nosotros</h3>
 </div>
-  
+
 <div class="info-container">
 
   <div class="info-text">
-    
+
     <p>
       La <strong>Asociación Internacional de Voluntarios Profesionales (AIVP)</strong> es el proyecto de Young Travelers que coordina voluntariados presenciales y virtuales. En estos programas, los jóvenes tienen la libertad de elegir las actividades que deseen realizar, ajustándolas según su disponibilidad de tiempo, intereses, conocimientos y experiencia.
       El objetivo principal es ser una plataforma profesional y académica para el desarrollo de los jóvenes, así como promover el alcance de los Objetivos de Desarrollo Sostenible en el mundo.
@@ -37,28 +37,28 @@
   <div class="cartas">
 
     <div class="carta1">
-      <div class="circulo1"> <img src="assets/person.svg"/> </div>
+      <div class="circulo1"> <img src="assets/person.svg" alt="Person icon"/> </div>
       <h3>Primer Pilar</h3>
       <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
       <a href="#">Button text</a>
     </div>
 
     <div class="carta2">
-      <div class="circulo2"> <img src="assets/People.svg" class="img-circulo3"/> </div>
+      <div class="circulo2"> <img src="assets/People.svg" alt="People icon" class="img-circulo3"/> </div>
       <h3>Segundo Pilar</h3>
       <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
       <a href="#">Button text</a>
     </div>
 
     <div class="carta3">
-      <div class="circulo3"> <img src="assets/person.svg"/> </div>
+      <div class="circulo3"> <img src="assets/person.svg" alt="Person icon"/> </div>
       <h3>Tercer Pilar</h3>
       <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
       <a href="#">Button text</a>
     </div>
 
   </div>
-  
+
 </div>
 
 <div class="subtitulos">
@@ -67,14 +67,14 @@
 </div>
 
 <div class="cuadros">
-  <div class="cuadro"> <p> Voluntariados ambientales y sociales </p>  <img src="assets/Image=16.png"> </div>
-  <div class="cuadro"> <p> Voluntariados permanentes o profesionales </p> <img src="assets/Image=12.png"> </div>
-  <div class="cuadro"> <p> Voluntariados en hostales </p> <img src="assets/Image=09.png"> </div>
-  <div class="cuadro"> <p> El Forum </p> <img src="assets/Image=13.png"> </div>
-  <div class="cuadro"> <p> Alianzas para la sostenibilidad y el desarrollo económico </p> <img src="assets/Image=15.png"> </div>
-  <div class="cuadro"> <p> Monitoreo y conservación ambiental </p> <img src="assets/Image=10.png"> </div>
-  <div class="cuadro"> <p> Nuestra filosofía </p> <img src="assets/Image=14.png"> </div>
-  <div class="cuadro"> <p> Servicios psicológicos gratuitos y otros </p> <img src="assets/Image=08.png"> </div>
+  <div class="cuadro"> <p> Voluntariados ambientales y sociales </p>  <img src="assets/Image=16.png" alt="Ilustrative image for enviromental and social volunteers"> </div>
+  <div class="cuadro"> <p> Voluntariados permanentes o profesionales </p> <img src="assets/Image=12.png" alt="Ilustrative image for professionals and permanents volunteering"> </div>
+  <div class="cuadro"> <p> Voluntariados en hostales </p> <img src="assets/Image=09.png" alt="Ilustrative image for hostal volunteering"> </div>
+  <div class="cuadro"> <p> El Forum </p> <img src="assets/Image=13.png" alt="Ilustrative image for Forum"> </div>
+  <div class="cuadro"> <p> Alianzas para la sostenibilidad y el desarrollo económico </p> <img src="assets/Image=15.png" alt="Ilustrative image Alliances for sustainability and economic development"> </div>
+  <div class="cuadro"> <p> Monitoreo y conservación ambiental </p> <img src="assets/Image=10.png" alt="Monitoring and environmental preservation"> </div>
+  <div class="cuadro"> <p> Nuestra filosofía </p> <img src="assets/Image=14.png" alt="Our philosophy"> </div>
+  <div class="cuadro"> <p> Servicios psicológicos gratuitos y otros </p> <img src="assets/Image=08.png" alt="Ilustartive image for Free psychological services and others"> </div>
 </div>
 
 <div class="subtitulos">
@@ -100,13 +100,17 @@
   </div>
 
   <div class="img-testi">
-    <img 
+    <img
       *ngFor="let avatar of avatars; let i = index"
       [src]="avatar.src"
       [alt]="avatar.alt"
+      [title]="avatar.alt"
       [class.active]="current === i"
+      tabindex="0"
       (click)="goToTestimonial(i)"
-    >
+      (keydown.enter)="goToTestimonial(i)"
+      alt="Testimonial image"
+      >
   </div>
 
   <p class="alt-img-testi">{{ testimonios[current].author }}</p>
@@ -151,7 +155,7 @@
         <h2>200+</h2>
         <p>Convenios aliados</p>
       </div>
-      
+
     </div>
 
   </div>
@@ -200,7 +204,7 @@
 <div class="subscripcion">
 
   <div class="subs-items">
-    
+
     <div>
       <p class="subs-info1 ">
         Sé parte de nuestro newsletter
