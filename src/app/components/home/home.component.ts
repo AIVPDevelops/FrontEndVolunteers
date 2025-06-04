@@ -77,7 +77,7 @@ export class HomeComponent {
     this.current = (this.current - 1 + this.testimonios.length) % this.testimonios.length;
   }
 
-  goToTestimonial(index: number = 1) {
+  goToTestimonial(index = 1) {
     this.current = index;
   }
 

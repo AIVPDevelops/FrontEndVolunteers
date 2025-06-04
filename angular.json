@@ -79,18 +79,30 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/assets"     
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "351454ca-c752-4710-96a4-ef9219dcb139"
+    "analytics": "351454ca-c752-4710-96a4-ef9219dcb139",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
