@@ -32,7 +32,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: angular-dist
+          name: ${{ vars.APP_NAME }}
           path: dist/${{ vars.APP_NAME }}
 
       - name: Deploy to S3
