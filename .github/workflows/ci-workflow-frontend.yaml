@@ -10,6 +10,10 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' && 'DEV' ||
+      github.event_name == 'pull_request' && github.base_ref == 'prod' && 'PROD' ||
+      github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && 'DEV' ||
+      github.event_name != 'pull_request' && github.ref == 'refs/heads/prod' && 'PROD' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

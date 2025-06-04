@@ -24,6 +24,10 @@ jobs:
       needs: build-and-test
       runs-on: ubuntu-latest
       steps:
+      - name: Set ENVIRONMENT fallback
+        run: |
+          echo "DEPLOY_ENV=${{ inputs.environment != '' && inputs.environment || vars.ENVIRONMENT || 'DEV' }}" >> $GITHUB_ENV
+          
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
