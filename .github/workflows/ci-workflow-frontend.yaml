@@ -30,7 +30,7 @@ jobs:
 
       - name: Build Angular App
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+          if [[ "${{ vars.ENVIRONMENT }}" == "DEV" ]]; then
             npm run build -- --configuration=development
           else
             npm run build -- --configuration=production
