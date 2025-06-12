@@ -7,7 +7,7 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: [tseslint.configs.recommended, js.configs.recommended],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
@@ -23,6 +23,7 @@ export default defineConfig([
     },
     plugins: ["@angular-eslint"],
     extends: [
+      "plugin:@typescript-eslint/recommended",
       "eslint:recommended",
       "plugin:@angular-eslint/recommended",
       "plugin:@angular-eslint/template/recommended",

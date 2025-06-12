@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class RestorePasswordComponent {
   isSubmitted = false;
-  email: string = '';
+  email = '';
 
   sendLink(): void {
     this.isSubmitted = true;
