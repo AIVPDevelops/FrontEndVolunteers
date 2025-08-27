@@ -1,6 +1,6 @@
 <div class="overlay" *ngIf="visible">
    
-  <div class="modal" (click)="$event.stopPropagation()">
+  <div class="modal" (click)="$event.stopPropagation()" tabindex="0" (keydown.enter)="$event.stopPropagation()" (keydown.space)="$event.stopPropagation()">
 
     <div class="success-titulo">
     <div class="logo">

@@ -1,7 +1,7 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormControl, FormGroup, Validators, ValidatorFn, AbstractControl, FormArray } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { ErrorMessagesComponent } from '../error-messages/error-messages.component'; 
 import { SuccessMessagesComponent } from '../success-messages/success-messages.component'; 
 
@@ -43,7 +43,7 @@ export class LoginPersonasComponent {
     email: new FormControl('', [
       Validators.required,
       Validators.email,
-      Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
+      Validators.pattern(/^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/)
     ]),
     password: new FormControl('', [
       Validators.required,

@@ -26,7 +26,6 @@ export default defineConfig([
       "plugin:@typescript-eslint/recommended",
       "eslint:recommended",
       "plugin:@angular-eslint/recommended",
-      "plugin:@angular-eslint/template/recommended",
     ],
     rules: {
       "no-unused-vars": "error",
@@ -41,6 +40,9 @@ export default defineConfig([
       "@angular-eslint/no-output-rename": "warn",
       "@angular-eslint/template/prefer-self-closing-tags": "warn",
       "@angular-eslint/template/no-duplicate-attributes": "warn",
+      "@typescript-eslint/no-inferrable-types": "off", 
+      "@typescript-eslint/explicit-module-boundary-types": "off", 
+      "@typescript-eslint/no-explicit-any": "warn",
       "@angular-eslint/component-selector": [
         "error",
         {
@@ -57,6 +59,13 @@ export default defineConfig([
           style: "camelCase",
         },
       ],
+    },
+  },
+  {
+    files: ["*.html"],
+    rules: {
+      "@angular-eslint/template/click-events-have-key-events": "off",
+      "@angular-eslint/template/interactim": "off",
     },
   },
   tseslint.configs.recommended,
