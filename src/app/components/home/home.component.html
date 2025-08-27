@@ -9,9 +9,9 @@
     <div class="buscador-container">
       <div class="buscador-input">
         <span> <img src="assets/search.svg" alt="Imagen principal" class="icono-lupa"/> </span>
-        <input type="text" placeholder="¿Qué lugar quieres explorar?" />
+        <input type="text" placeholder="¡Encuentra a tu equipo!" [formControl]="voluntariadosSearch"/>
       </div>
-      <button class="btn-voluntariado">Buscar Voluntariado</button>
+      <button class="btn-voluntariado" (click)="buscarVoluntariado()">Buscar Voluntariado</button>
     </div>
 
 </div>
@@ -38,23 +38,35 @@
 
     <div class="carta1">
       <div class="circulo1"> <img src="assets/person.svg" alt="Person icon"/> </div>
-      <h3>Primer Pilar</h3>
-      <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
-      <a href="#">Button text</a>
+      <h3>Primer Pilar - </h3>
+      <h1>DESARROLLO ECONÓMICO </h1>
+      <p>Para Young Travelers es fundamental trabajar con comunidades vulnerables y con escasez de recursos,
+         al hacer uso del turismo con el objetivo de concientizar y sensibilizar a los jóvenes acerca de las
+         diferentes formas de vida y realidades que nos afectan a todos como sociedad.
+      </p>
+      <a href="#">Ir</a>
     </div>
 
     <div class="carta2">
       <div class="circulo2"> <img src="assets/People.svg" alt="People icon" class="img-circulo3"/> </div>
-      <h3>Segundo Pilar</h3>
-      <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
-      <a href="#">Button text</a>
+      <h3>Segundo Pilar - </h3>
+      <h1>DIVERSIDAD E INCLUSIÓN </h1>
+      <p>Young Travelers tiene como uno de sus principales objetivos fomentar la integración sociocultural,
+         al igual que la lucha en contra de cualquier tipo de discriminación por situaciones de diversidad o
+         vulnerabilidad. Esto sugiere razones étnicas, de género, orientación sexual, lingüística, religiosas ó econóimicas.
+      </p>
+      <a href="#">Ir</a>
     </div>
 
     <div class="carta3">
       <div class="circulo3"> <img src="assets/person.svg" alt="Person icon"/> </div>
-      <h3>Tercer Pilar</h3>
-      <p>This is a description of the features of our app. We are going to briefly outline what this feature does</p>
-      <a href="#">Button text</a>
+      <h3>Tercer Pilar - </h3>
+      <h1>MEDIO AMBIENTE</h1>
+      <p>Como esencia de Young Travelers, la conexión de los jóvenes con la naturaleza es fundamental y su inmersión en ella se
+         debe realizar de manera adecuada a razón de fomentar la protección, preservación, recuperación y respeto de los
+         recursos naturales.
+      </p>
+      <a href="#">Ir</a>
     </div>
 
   </div>
@@ -128,7 +140,7 @@
     <img src="assets/Image=17.png" alt="Voluntariado">
   </div>
 
-  <div class="info-vol">
+  <div class="info-vol" #contadorSection>
 
     <p class="descripcion-vol">
       Apoyamos diversas organizaciones que elevan a las comunidades a través del voluntariado.
@@ -137,22 +149,22 @@
     <div class="grid-vol">
 
       <div class="item1-vol">
-        <h2>400+</h2>
+        <h2>{{ proyectos }}+</h2>
         <p>Proyectos completados</p>
       </div>
 
       <div class="item2-vol">
-        <h2>100%</h2>
+        <h2>{{ satisfaccion }}%</h2>
         <p>Satisfacción</p>
       </div>
 
       <div class="item3-vol">
-        <h2>10k</h2>
+        <h2>{{ voluntarios }}k</h2>
         <p>Voluntarios globales</p>
       </div>
 
       <div class="item4-vol">
-        <h2>200+</h2>
+        <h2>{{ convenios }}+</h2>
         <p>Convenios aliados</p>
       </div>
 
@@ -170,55 +182,70 @@
   </div>
 
   <div class="fila">
-    <img src="assets/TikTokLogoGray.svg" alt="McDonald's">
-    <img src="assets/TikTokLogoGray.svg" alt="Toyota">
-    <img src="assets/TikTokLogoGray.svg" alt="Apple">
-    <img src="assets/TikTokLogoGray.svg" alt="Pepsi">
-    <img src="assets/TikTokLogoGray.svg" alt="BMW">
-    <img src="assets/TikTokLogoGray.svg" alt="NBC">
-    <img src="assets/TikTokLogoGray.svg" alt="Adidas">
+    <img src="assets/logoMD.png" alt="McDonald's">
+    <img src="assets/logoY.png" alt="Toyota">
+    <img src="assets/logoApple.png" alt="Apple">
+    <img src="assets/logoPepsi.png" alt="Pepsi">
+    <img src="assets/logoX.png" alt="NBC">
+    <img src="assets/logoBMW.png" alt="BMW">
+    <img src="assets/logoAdidas.png" alt="Adidas">
   </div>
 
   <div class="fila2">
-    <img src="assets/TikTokLogoGray.svg" alt="Pepsi">
-    <img src="assets/TikTokLogoGray.svg" alt="BMW">
-    <img src="assets/TikTokLogoGray.svg" alt="Apple">
-    <img src="assets/TikTokLogoGray.svg" alt="Toyota">
-    <img src="assets/TikTokLogoGray.svg" alt="NBC">
-    <img src="assets/TikTokLogoGray.svg" alt="Pepsi Color">
-    <img src="assets/TikTokLogoGray.svg"alt="Apple">
+    <img src="assets/logoBMW.png" alt="BMW">
+    <img src="assets/logoAdidas.png" alt="Adidas">
+    <img src="assets/logoMD.png" alt="McDonald's">
+    <img src="assets/logoY.png" alt="Toyota">
+    <img src="assets/logoApple.png"alt="Apple">
+    <img src="assets/logoPepsi.png" alt="Pepsi">
+    <img src="assets/logoX.png" alt="NBC">  
   </div>
 
   <div class="fila">
-    <img src="assets/TikTokLogoGray.svg" alt="McDonald's">
-    <img src="assets/TikTokLogoGray.svg" alt="Toyota">
-    <img src="assets/TikTokLogoGray.svg" alt="Apple">
-    <img src="assets/TikTokLogoGray.svg" alt="Pepsi">
-    <img src="assets/TikTokLogoGray.svg" alt="BMW">
-    <img src="assets/TikTokLogoGray.svg" alt="NBC">
-    <img src="assets/TikTokLogoGray.svg" alt="Adidas">
+    <img src="assets/logoPepsi.png" alt="Pepsi">
+    <img src="assets/logoX.png" alt="NBC">
+    <img src="assets/logoBMW.png" alt="BMW">
+    <img src="assets/logoAdidas.png" alt="Adidas">
+    <img src="assets/logoMD.png" alt="McDonald's">
+    <img src="assets/logoY.png" alt="Toyota">
+    <img src="assets/logoApple.png" alt="Apple">
   </div>
 
 </div>
 
 <div class="subscripcion">
-
   <div class="subs-items">
-
     <div>
-      <p class="subs-info1 ">
+      <p class="subs-info1">
         Sé parte de nuestro newsletter
       </p>
-      <p class="subs-info2">Te enviaremos las últimas noticias una vez por semana. Sin spam.</p>
+      <p class="subs-info2">
+        Te enviaremos las últimas noticias una vez por semana. Sin spam.
+      </p>
     </div>
 
-    <div class="subs-input ">
-    <input type="text" placeholder="Ingresa tu correo" />
+    <div class="subs-input">
+      <input
+        type="email"
+        placeholder="Ingresa tu correo"
+        [formControl]="subsForm.controls.email"
+      />
     </div>
 
-    <a href="#" class="subs-btn">Subscríbete</a>
-
+    <button type="button" class="subs-btn" (click)="suscribirse()">
+      Suscríbete
+    </button>
   </div>
-
-
 </div>
+
+<app-error-messages
+  [mensaje]="mensajeError"
+  [visible]="mostrarError"
+  (cerrar)="cerrarError()">
+</app-error-messages>
+
+<app-success-messages
+  [mensaje]="mensajeExitoso"
+  [visible]="mostrarExitoso"
+  (cerrar)="cerrarExitoso()">
+</app-success-messages>

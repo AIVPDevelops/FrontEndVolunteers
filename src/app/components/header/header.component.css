@@ -10,7 +10,8 @@
   
     /* Logo de AIVP */
     .logo img {
-      width: 50px;
+        width:150px; 
+        height:150px;
     }
   
     /* Botones de inicio de sesión */
