@@ -1,23 +1,129 @@
-<div class="fondo">
-  
+<div *ngIf="mostrarPrincipal">
+  <div class="fondo"> 
+    
+      <div class="login-box">
+
+          <h2>¡Bienvenido!</h2>
+          <p>Crea tu cuenta</p>
+
+          <input type="email" placeholder="Ingresa tu correo electrónico" [formControl]="subsForm.controls.email">
+          <button class="register-btn"  (click)="registro()">Regístrate</button>
+
+          <a href="https://www.linkedin.com/login/es?fromSignIn=true" target="_blank" class="linkedin-btn">
+            <img src="../../../assets/logoLinkedInColor.png" alt="LinkedIn"> Ingresa con LinkedIn
+          </a>
+          
+          <a href="https://workspace.google.com/intl/es-419/gmail/" target="_blank" class="google-btn">
+            <img src="../../../assets/logoGoogleColor.png" alt="Google"> Ingresa con Google         
+          </a>
+
+          <h3>¿Ya tienes cuenta? <a href="/login" class="login-link">Inicia Sesión</a></h3>
+
+      </div>
+
+  </div>
+</div>
+
+<div *ngIf="mostrarRegistro">
+  <div class="fondo"> 
     <div class="register-box">
+          <h2>¡Bienvenido!</h2>
+          <p>Crea tu cuenta</p>
 
-        <h2>¡Bienvenido!</h2>
-        <p>Crea tu cuenta</p>
+          <form [formGroup]="subsForm" (ngSubmit)="crearCuenta()">
+            <h4>Correo electrónico*</h4>
+            <input type="text" placeholder="Ingresa tu correo electrónico"  [formControl]="subsForm.controls.email"/>
 
-        <input type="email" placeholder="Ingresa tu correo">
-        <button class="register-btn">Regístrate</button>
+            <h4>Contraseña*</h4>
+            <input type="password" placeholder="Contraseña*" [formControl]="subsForm.controls.password"/>
+            <p class="note">Debe contener mínimo 8 caracteres.</p>
 
-        <button class="linkedin-btn">
-          <img src="../../../assets/LinkedinLogoGray.svg" alt="LinkedIn"> Ingresa con LinkedIn
-        </button>
+            <h4>Repite tu contraseña*</h4>
+            <input type="password" placeholder="Repite tu contraseña*" [formControl]="subsForm.controls.confirmPassword" />
+          
+            <button class="create-btn">Crear cuenta</button>
+
+          </form>
+
+          <a href="https://www.linkedin.com/login/es?fromSignIn=true" target="_blank" class="linkedin-btn">
+            <img src="../../../assets/logoLinkedInColor.png" alt="LinkedIn"> Ingresa con LinkedIn
+          </a>
         
-        <button class="google-btn">
-          <img src="../../../assets/LinkedinLogoGray.svg" alt="Google"> Ingresa con Google
-        </button>
+          <a href="https://workspace.google.com/intl/es-419/gmail/" target="_blank" class="google-btn">
+            <img src="../../../assets/logoGoogleColor.png" alt="Google"> Ingresa con Google         
+          </a>
 
         <h3>¿Ya tienes cuenta? <a href="/login" class="login-link">Inicia Sesión</a></h3>
 
     </div>
-
+  </div>
 </div>
+
+<div *ngIf="mostrarCompletarInfo">
+  <div class="fondo2"> 
+      <div class="completeinfo-box">
+            <h2>¡Completa tus datos!</h2>
+            <p>Crece con nosotros</p>
+
+           <form [formGroup]="subsForm" (ngSubmit)="registrarInfo()">
+
+              <h4>Nombres*</h4>
+              <input type="text" placeholder="Ingresa tus nombres" [formControl]="subsForm.controls.email" />
+
+              <h4>Apellidos*</h4>
+              <input type="text" placeholder="Ingresa tus apellidos" [formControl]="subsForm.controls.email" />
+
+              <h4>Celular*</h4>
+              <input type="text" placeholder="Ingresa tu celular" [formControl]="subsForm.controls.email" />
+
+              <h4>Fecha de nacimiento*</h4>
+              <input type="date" [formControl]="subsForm.controls.email" />
+
+              <h4>País de residencia*</h4>
+              <select [formControl]="subsForm.controls.email">
+                <option value="">Selecciona un país</option>
+                <option *ngFor="let pais of paises" [value]="pais">{{ pais }}</option>
+              </select>
+
+              <h4>Ciudad de residencia*</h4>
+              <input type="text" placeholder="Ingresa tu ciudad" [formControl]="subsForm.controls.email" />
+
+              <h4>Áreas de voluntariado*</h4>
+              <div *ngFor="let area of areasVoluntariado; let i = index">
+                <input 
+                  type="checkbox" 
+                  [id]="'area'+i"
+                />
+                <label [for]="'area'+i">{{ area }}</label>
+              </div>
+
+              <h4>Horas disponibles por semana*</h4>
+              <div *ngFor="let hora of horasDisponibles; let i = index">
+                <input 
+                  type="checkbox" 
+                  [id]="'hora'+i"
+                />
+                <label [for]="'hora'+i">{{ hora }}</label>
+              </div>
+
+              <button class="create-btn" type="submit">Inicia la Aventura</button>
+            </form>
+
+            <h3>¿Ya tienes cuenta? <a href="/login" class="login-link">Inicia Sesión</a></h3>
+
+      </div>
+  </div>
+</div>
+
+<app-error-messages
+  [mensaje]="mensajeError"
+  [visible]="mostrarError"
+  (cerrar)="cerrarError()">
+</app-error-messages>
+
+<app-success-messages
+  [mensaje]="mensajeExitoso"
+  [visible]="mostrarExitoso"
+  (cerrar)="cerrarExitoso()">
+</app-success-messages>
+

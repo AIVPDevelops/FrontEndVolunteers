@@ -1,0 +1,23 @@
+<div class="overlay" *ngIf="visible">
+   
+  <div class="modal" (click)="$event.stopPropagation()" tabindex="0" (keydown.enter)="$event.stopPropagation()" (keydown.space)="$event.stopPropagation()">
+
+    <div class="success-titulo">
+    <div class="logo">
+        <img src="assets/LogoAIVPYT.svg" alt="Logo"/>
+    </div>
+    </div>
+
+    <div class="icono-success">
+        <img src="assets/iconoSuccess.png" alt="Logo" />
+    </div>
+
+    <div class="success-mensaje">
+    <p> {{mensaje}} </p>
+    </div>
+    
+    <button (click)="onClose()">Aceptar</button>
+
+  </div>
+
+</div>

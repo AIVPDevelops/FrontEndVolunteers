@@ -21,10 +21,13 @@
   .footer-left {
     text-align: center;
     img.logo {
-      width: 30px;
+      margin-top: -25px;
+      margin-left: 20px;
+      width:130px; 
+      height:130px;
     }
     p {
-      padding-top: 22px;
+      margin-top: -25px;
     }
 
     padding-right: 80px;
