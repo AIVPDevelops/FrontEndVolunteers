@@ -153,15 +153,15 @@ export class HomeComponent implements AfterViewInit {
   }
 
   //Validación del campo de suscripción.
-  subsForm: FormGroup<{
+  subsForm = new FormGroup<{
     email: FormControl<string | null>;
-  }> = new FormGroup({
+  }>({
     email: new FormControl<string | null>(
       '',
       [
         Validators.required, 
         Validators.email,
-        Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) 
+        Validators.pattern(/^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/) 
       ]
     )
   });
