@@ -77,18 +77,18 @@ export class HomeComponent implements AfterViewInit {
     { src: "https://randomuser.me/api/portraits/men/5.jpg", alt: "Avatar 5" }
   ];
 
-  current: number = 2;
+  current = 2;
 
   //Contador para la animación de los números en el home page.
   @ViewChild('contadorSection') contadorSection!: ElementRef;
 
-  proyectos: number = 0;
-  satisfaccion: number = 0;
-  voluntarios: number = 0;
-  convenios: number = 0;
+  proyectos = 0;
+  satisfaccion = 0;
+  voluntarios = 0;
+  convenios = 0;
 
   private observer!: IntersectionObserver;
-  private animado: boolean = false; 
+  private animado = false; 
 
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver(entries => {
@@ -134,7 +134,7 @@ export class HomeComponent implements AfterViewInit {
     this.current = (this.current - 1 + this.testimonios.length) % this.testimonios.length;
   }
 
-  goToTestimonial(index: number = 1): void {
+  goToTestimonial(index = 1): void {
     this.current = index;
   }
 
@@ -166,10 +166,10 @@ export class HomeComponent implements AfterViewInit {
     )
   });
 
-  mensajeError: string = '';
-  mostrarError: boolean = false;
-  mensajeExitoso: string = '';
-  mostrarExitoso: boolean = false;
+  mensajeError = '';
+  mostrarError = false;
+  mensajeExitoso = '';
+  mostrarExitoso = false;
 
   suscribirse(): void {
   const emailValue = this.subsForm.value.email?.trim() || '';

@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ErrorMessagesComponent {
 
-  @Input() mensaje: string = 'Ha ocurrido un error';
-  @Input() visible: boolean = false;
+  @Input() mensaje = 'Ha ocurrido un error';
+  @Input() visible = false;
   @Output() cerrar = new EventEmitter<void>();
 
   onClose() {
