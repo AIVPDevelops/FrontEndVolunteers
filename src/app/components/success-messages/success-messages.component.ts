@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class SuccessMessagesComponent {
 
-  @Input() mensaje: string = '¡Proceso satisfactorio!';
-  @Input() visible: boolean = false;
+  @Input() mensaje = '¡Proceso satisfactorio!';
+  @Input() visible = false;
   @Output() cerrar = new EventEmitter<void>();
 
   onClose() {

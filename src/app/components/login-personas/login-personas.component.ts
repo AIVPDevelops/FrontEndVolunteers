@@ -14,10 +14,10 @@ import { SuccessMessagesComponent } from '../success-messages/success-messages.c
 })
 export class LoginPersonasComponent {
 
-  mostrarRegistro: boolean = false;
-  mostrarCompletarInfo: boolean = false;
-  banderaRegistro: boolean = false;
-  mostrarPrincipal: boolean = true
+  mostrarRegistro = false;
+  mostrarCompletarInfo = false;
+  banderaRegistro = false;
+  mostrarPrincipal = true
 
   mostrarFormularioRegistro(): void {
     this.mostrarRegistro = true;
@@ -53,10 +53,10 @@ export class LoginPersonasComponent {
     confirmPassword: new FormControl('', Validators.required)
   }, { validators: this.passwordsMatchValidator });
 
-  mensajeError: string = '';
-  mostrarError: boolean = false;
-  mensajeExitoso: string = '';
-  mostrarExitoso: boolean = false;
+  mensajeError = '';
+  mostrarError = false;
+  mensajeExitoso = '';
+  mostrarExitoso = false;
   paises: string[] = ['Colombia', 'México', 'Argentina', 'Chile', 'Perú', 'Brasil', 'Estados Unidos'];
   areasVoluntariado: string[] = ['Educación', 'Salud', 'Medio Ambiente', 'Derechos Humanos', 'Animales', 'Deporte'];
   horasDisponibles: string[] = ['1-5 horas', '6-10 horas', '11-15 horas', 'Más de 15 horas'];
